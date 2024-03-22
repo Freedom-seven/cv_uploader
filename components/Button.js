@@ -1,28 +1,38 @@
+// Importing necessary modules from react and react-native
 import React, { useRef } from "react";
 import { Animated, StyleSheet, Text, Pressable } from "react-native";
-import Colors from "../constants/Colors";
+import Colors from "../constants/Colors"; // Importing the Colors constants
 
+// Defining the AnimatedButton component
+// This component receives onPress and title props
 export default function AnimatedButton({ onPress, title }) {
+  // Initializing a new Animated Value with useRef hook
   const scaleValue = useRef(new Animated.Value(1)).current;
 
+  // Defining the handlePressIn function for the Pressable
   const handlePressIn = () => {
+    // Starting the spring animation when the button is pressed
     Animated.spring(scaleValue, {
       toValue: 1.2,
       useNativeDriver: true,
     }).start();
   };
 
+  // Defining the handlePressOut function for the Pressable
   const handlePressOut = () => {
+    // Reversing the spring animation when the button is released
     Animated.spring(scaleValue, {
       toValue: 1,
       useNativeDriver: true,
     }).start();
   };
 
+  // Defining the animated styles for the button
   const animatedStyles = {
     transform: [{ scale: scaleValue }],
   };
 
+  // Rendering the AnimatedButton component
   return (
     <Pressable
       onPressIn={handlePressIn}
