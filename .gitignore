@@ -31,5 +31,8 @@ yarn-error.*
 # local env files
 .env*.local
 
+# ignore the api.js file in the utils directory
+utils/api.js
+
 # typescript
 *.tsbuildinfo
