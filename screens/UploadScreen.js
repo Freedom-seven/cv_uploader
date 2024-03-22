@@ -15,7 +15,7 @@ import Colors from "../constants/Colors";
 import { PORTAL_API_BASE_URL, PORTAL_API_SUCCESS_URL } from "../utils/api";
 
 const UploadScreen = ({ navigation }) => {
-  // Don't forget to receive navigation prop
+  //receive navigation prop
   const [portalUrl, setPortalUrl] = useState(null); // State to hold the portal URL
   const [loading, setLoading] = useState(true); // State to handle loading status
   const [uploadSuccess, setUploadSuccess] = useState(false); // State to handle upload success
@@ -65,9 +65,9 @@ const UploadScreen = ({ navigation }) => {
       {uploadSuccess ? (
         <View style={styles.successContainer}>
           <Image
-            source={require("../assets/success.gif")} // path to the gif
+            source={require("../assets/success.gif")}
             style={styles.gif}
-            resizeMode="contain" // to maintain the aspect ratio
+            resizeMode="contain"
           />
           <Text style={styles.successText}>
             🎉 Your CV has been successfully uploaded! 🎉
